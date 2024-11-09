@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Resume</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/edit.css">
+    <link rel="stylesheet" href="styles/resumeStyles.css">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <div class="main">
+        <header class="create-resume-header">
+            <h1 class="header-title">n8x</h1>
+            <div class="header-nav">
+                <a href="index.html">Home</a>
+                <a href="https://www.linkedin.com/in/syed-shayan-3a48202b3/">LInkedIn</a>
+                <a href="https://n8x-dev-portfolio.web.app/">Portfolio</a>
+            </div>
+        </header>
+
+        <div class="helpPopup">
+            <ul>
+                <li><strong>Applying Alignment, Padding, and Text Styles:</strong> To use these styles, enter your
+                    content and then select the <strong>Wrap</strong> button in the right panel. This action will wrap
+                    your content in a <code>&lt;p&gt;</code> tag, enabling you to apply styles more effectively.</li>
+
+                <li><strong>Headings (e.g., H1, H2):</strong> Headings do not require wrapping; they automatically
+                    enclose text within the selected heading tag (<code>H1</code>, <code>H2</code>, etc.).</li>
+
+                <li><strong>Bold, Italic, and Underline:</strong> For best results, apply bold, italic, or underline
+                    styles after finalizing your text, as these features may <u>currently exhibit minor bugs.</u></li>
+            </ul>
+            <button class="fullWidthBtn okInstructions">Ok</button>
+        </div>
+
+        <div class="toolkit toolkitLft">
+            <section style="flex-direction: column;" class="section">
+                <h4 class="section-title">Selection:</h4>
+                <div class="displaySelection fullWidthBtn"></div>
+            </section>
+            <hr>
+            <section class="section">
+                <h4 class="section-title">Page</h4>
+                <input type="number" class="paddPageInp pixelInputs" data-ac="padding" value="20" min="0" max="60">
+                <span class="">Padding</span>
+            </section>
+            <hr>
+            <button id="print" class="fullWidthBtn">print</button>
+            <button id="share" class="fullWidthBtn">share</button>
+            <button id="help" class="fullWidthBtn">Help</button>
+        </div>
+
+        <div class="toolkit toolkitRgt">
+            <section class="section">
+                <h4 class="section-title">Align</h4>
+                <div class="align-icons">
+                    <i class="textStyle fas fa-align-left" data-ac="left" data-property="textAlign"
+                        title="align left"></i>
+                    <i class="textStyle fas fa-align-center" data-ac="center" data-property="textAlign"
+                        title="align center"></i>
+                    <i class="textStyle fas fa-align-right" data-ac="right" data-property="textAlign"
+                        title="align right"></i>
+                </div>
+            </section>
+            <hr>
+            <section>
+                <h4 class="section-title">Text</h4>
+                <select id="fontFamilySelect" title="fonts" class="dropdown">
+                    <option value="">Select Font Family</option>
+                    <option value="Arial, sans-serif" style="font-family: Arial, sans-serif;">Arial</option>
+                    <option value="'Courier New', monospace" style="font-family: 'Courier New', monospace;">Courier New
+                    </option>
+                    <option value="'Georgia', serif" style="font-family: 'Georgia', serif;">Georgia</option>
+                    <option value="'Times New Roman', serif" style="font-family: 'Times New Roman', serif;">Times New
+                        Roman</option>
+                    <option value="'Verdana', sans-serif" style="font-family: 'Verdana', sans-serif;">Verdana</option>
+                </select>
+            </section>
+            <div class="fontWeightSelector">
+                <select id="fontWeightSelect" title="font weight" class="dropdown">
+                    <option value="">Font Weight</option>
+                    <option value="400" style="font-weight: 100;">Regular</option>
+                    <option value="500" style="font-weight: 500;">Medium</option>
+                    <option value="600" style="font-weight: 600;">SemiBold</option>
+                    <option value="700" style="font-weight: 700;">Bold</option>
+                    <option value="800" style="font-weight: 800;">ExtraBold</option>
+                    <option value="900" style="font-weight: 900;">Black</option>
+                </select>
+            </div>
+            <div class="fontWeightSelector">
+                <select id="fontSizeSelect" title="font size" class="dropdown">
+                    <option value="">Font Size</option>
+                    <option value="xx-small">xx-small</option>
+                    <option value="x-small">x-small</option>
+                    <option value="small">small</option>
+                    <option value="medium">medium</option>
+                    <option value="large">large</option>
+                    <option value="x-large">x-large</option>
+                    <option value="xx-large">xx-large</option>
+                </select>
+            </div>
+            <div class="align-icons">
+                <button class="textaction" data-ac="b" data-style="fontWeight" data-value="bold"
+                    name="bold text"><i><b>B</b></i></button>
+                <button class="textaction" data-ac="i" data-style="fontStyle" data-value="italic"
+                    name="italic text"><i>i</i></button>
+                <button class="textaction" data-ac="u" data-style="textDecoration" data-value="underline"
+                    name="underlined text"><i><u>u</u></i></button>
+                <i class="bulletBtn" title="bullet">&bull;</i>
+            </div>
+            <hr>
+            <section class="section">
+                <h4 class="section-title">Padding</h4>
+                <input type="number" class="paddInp" placeholder="set padding value in px" value="0" disabled
+                    title="set padding">
+                <div class="align-icons padding-icons">
+                    <div title="padding top">
+                        <span>pt:</span>
+                        <input type="text" data-ac="padding-top" class="pt-inp pixelInputs">
+                    </div>
+                    <div title="padding bottom">
+                        <span>pb:</span>
+                        <input type="text" data-ac="padding-bottom" class="pb-inp pixelInputs">
+                    </div>
+                    <div title="padding right">
+                        <span>pr:</span>
+                        <input type="text" data-ac="padding-right" class="pr-inp pixelInputs">
+                    </div>
+                    <div title="padding left">
+                        <span>pl:</span>
+                        <input type="text" data-ac="padding-left" class="pl-inp pixelInputs">
+                    </div>
+                </div>
+            </section>
+            <hr>
+            <div>
+                <button class="textaction fullWidthBtn wrapperAnim" data-ac="p" name="normal text"
+                    title="select text and use 'span' to apply styles">wrap</button>
+            </div>
+            <hr>
+            <section class="align-icons padding-icons">
+                <button class="textaction" data-ac="h1" name="h1">H1</button>
+                <button class="textaction" data-ac="h2" name="h2">H2</button>
+                <button class="textaction" data-ac="h3" name="h3">H3</button>
+                <button class="textaction" data-ac="h4" name="h4">H4</button>
+                <button class="textaction" data-ac="h5" name="h5">H5</button>
+                <button class="textaction" data-ac="h6" name="h6">H6</button>
+            </section>
+            <hr>
+            <section class="section">
+                <h4 class="section-title">Color</h4>
+                <div class="color-inp-cont">
+                    <label for="color">Font color:</label>
+                    <div>
+                        <input type="color" name="color" id="colorInp" value="#000000">
+                        <span class="displyColorHex">#000000</span>
+                    </div>
+                </div>
+                <div class="color-inp-cont">
+                    <label for="bg">Background color:</label>
+                    <div>
+                        <input type="color" name="bg" id="bgColorInp" value="#ffffff">
+                        <span class="displyBgHex">#ffffff</span>
+                    </div>
+                </div>
+            </section>
+            <button id="print" class="fullWidthBtn">print</button>
+        </div>
+    </div>
+    <div class="page" id="page" contenteditable="true">
+
+    </div>
+
+    <!-- <div>
+        <div class="left">
+            <div class="profileText">
+                <div class="profileImg">
+                    <img src="profile-img.webp" alt="">
+                </div>
+                <h2>Hiba M.Dawood
+                    <span>Web Developer</span>
+                </h2>
+            </div>
+            <div class="Info">
+                <h3 class="title">Contact Info</h3>
+
+                <ul>
+                    <li>
+                        <span class="icon"><ion-icon name="phone-portrait-outline"></ion-icon></span>
+                        <span class="text">+86 012 3456 7890</span>
+                    </li>
+                    <li>
+                        <span class="icon"><ion-icon name="mail-unread-outline"></ion-icon>
+                        </span>
+                        <span class="text">abc@gmail.com</span>
+                    </li>
+                    <li>
+                        <span class="icon"><ion-icon name="globe-outline"></ion-icon></span>
+                        <span class="text">www.MyWebsite.com</span>
+                    </li>
+                    <li>
+                        <span class="icon"><ion-icon name="link-outline"></ion-icon></span>
+                        <span class="text">www.linkedin.com/lin</span>
+                    </li>
+                    <li>
+                        <span class="icon"><ion-icon name="location-outline"></ion-icon></span>
+                        <span class="text">Karachi, Pakistan</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="Info education edu">
+                <h3 class="title">Education</h3>
+                <ul>
+                    <li>
+                        <h5>year -year</h5>
+                        <h4>Degree</h4>
+                        <h4>Univercity</h4>
+                    </li>
+                    <li>
+                        <h5>year -year</h5>
+                        <h4>12 <sub>th</sub> </h4>
+                        <h4>School / College<h4>
+                    </li>
+                    <li>
+                        <h5>year -year</h5>
+                        <h4>10 <sub>th</sub> </h4>
+                        <h4>School</h4>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="Info language lang">
+                <h3 class="title">Language</h3>
+                <ul>
+                    <li>
+                        <span class="text">English</span>
+                        <span class="percent">
+                            <div style="width: 75%"></div>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="text">Chinese</span>
+                        <span class="percent">
+                            <div style="width: 90%"></div>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="text">Urdu</span>
+                        <span class="percent">
+                            <div style="width: 70%"></div>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="right">
+            <div class="about">
+                <h2 class="title2">Profile</h2>
+                <p>My name is Hiba Muhammad Dawood, and I’m a web developer with a strong
+                    foundation in HTML, CSS, and TypeScript. I’m currently diving deeper into
+                    Next.js to expand my skills and take my web development expertise to the
+                    next level. I’m passionate about creating dynamic and responsive web applications,
+                    and I’m always excited to keep learning and growing in the tech field.
+                    I love the challenge of problem-solving through code. <br><br>
+                    I believe in writing clean,
+                    efficient code that enhances both functionality and user experience. As someone
+                    who enjoys continuous learning, I keep up with the latest industry trends and tools
+                    to bring fresh, innovative ideas to my projects. My goal is to build impactful,
+                    user-friendly websites and applications that make a difference.
+                </p>
+            </div>
+
+            <div class="about">
+                <h2 class="title2">Experience</h2>
+                <div class="box">
+                    <div class="year_company">
+                        <h5>2024 - present</h5>
+                        <h5>Organization</h5>
+                    </div>
+
+                    <div class="text">
+                        <h4>Your Roll</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            Officia distinctio cumque
+                            aliquid laborum repudiandae sit dicta natus, voluptatem porro.</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="year_company">
+                        <h5>2022 - 2024</h5>
+                        <h5>Organization</h5>
+                    </div>
+
+                    <div class="text">
+                        <h4>Your Roll</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            Officia distinctio cumque
+                            aliquid laborum repudiandae sit dicta natus, voluptatem porro.</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="year_company">
+                        <h5>2020 - 2022</h5>
+                        <h5>Organization</h5>
+                    </div>
+
+                    <div class="text">
+                        <h4>Your Roll</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            Officia distinctio cumque
+                            aliquid laborum repudiandae sit dicta natus, voluptatem porro.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about skills">
+                <h2 class="title2">Professional skills</h2>
+                <div class="box">
+                    <h4>HTML</h4>
+                    <div class="percent">
+                        <div style="width: 98%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>Tailwind CSS</h4>
+                    <div class="percent">
+                        <div style="width: 98%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>Typescript</h4>
+                    <div class="percent">
+                        <div style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>Next.js</h4>
+                    <div class="percent">
+                        <div style="width: 88%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about interest">
+                <h2 class="title2">Interest</h2>
+                <ul>
+                    <li><ion-icon class="icon" name="book-outline"></ion-icon>Reading</li>
+                    <li><ion-icon class="icon" name="football-sharp"></ion-icon>Football</li>
+                    <li><ion-icon class="icon" name="car-sport"></ion-icon>Traveling</li>
+                    <li><ion-icon class="icon" name="code-slash-sharp"></ion-icon>Coding</li>
+                    <li><ion-icon class="icon" name="game-controller"></ion-icon>Gaming</li>
+                    <li><ion-icon class="icon" name="headset-sharp"></ion-icon>Listening Music</li>
+                </ul>
+            </div>
+        </div>
+    </div> -->
+    <script type="module">
+        import printResume from './scripts/template.js'
+
+        function decodeResumeData() {
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const encodedData = urlParams.get('data');
+
+            if (encodedData) {
+                try {
+                    const decodedData = JSON.parse(atob(decodeURIComponent(encodedData)));
+                    const { cvData, templateType } = decodedData
+
+                    const htmlTemp = printResume(templateType, cvData);
+                    document.querySelector("#page").innerHTML = htmlTemp
+
+                } catch (error) {
+                    console.error("Error decoding resume data:", error);
+                    alert("Invalid resume data.");
+                }
+            } else {
+                alert("No resume data found.");
+            }
+        }
+
+        window.onload = decodeResumeData;
+    </script>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="scripts/edit.js" type="module"></script>
+
+</html>
