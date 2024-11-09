@@ -128,15 +128,16 @@
             if (encodedData) {
                 try {
                     const decodedData = JSON.parse(atob(decodeURIComponent(encodedData)));
+                    const {username, contact, email, objective, skills, experience, education, summary} = decodedData.cvData
 
-                    document.getElementById('print-username').innerHTML = decodedData.username;
-                    document.getElementById('print-contact').innerHTML = decodedData.contact;
-                    document.getElementById('print-email').innerHTML = decodedData.email;
-                    document.getElementById('print-objective').innerHTML = decodedData.objective;
-                    document.getElementById('print-skills-list').innerHTML = decodedData.skills.map((data) => `<li>${data}</li>`);
-                    document.getElementById('print-exp-list').innerHTML = decodedData.experience.map((data) => `<li>${data}</li>`);
-                    document.getElementById('print-edu-list').innerHTML = decodedData.education.map((data) => `<li>${data}</li>`);
-                    document.getElementById('print-summary').innerHTML = decodedData.summary;
+                    document.getElementById('print-username').innerHTML = username;
+                    document.getElementById('print-contact').innerHTML = contact;
+                    document.getElementById('print-email').innerHTML = email;
+                    document.getElementById('print-objective').innerHTML = objective;
+                    document.getElementById('print-skills-list').innerHTML = skills.map((data) => `<li>${data}</li>`);
+                    document.getElementById('print-exp-list').innerHTML = experience.map((data) => `<li>${data}</li>`);
+                    document.getElementById('print-edu-list').innerHTML = education.map((data) => `<li>${data}</li>`);
+                    document.getElementById('print-summary').innerHTML = summary;
 
                 } catch (error) {
                     console.error("Error decoding resume data:", error);
