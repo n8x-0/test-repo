@@ -1,43 +1,26 @@
 @media print {
-    @page {
-        size: A4;
-        margin: 0cm;
-    }
-
-    body {
-        width: 21cm;
-        height: 29.7cm;
-    }
-
     #editPreview {
         width: 100% !important;
-        box-sizing: border-box;
         background: white;
     }
 
-    #print-content {
-        width: 100% !important;
+    .template2-container {
+        background: #f4f4f4;
     }
 
-    #template2,
     .resume-template,
-    .template2-container,
-    .template2-sidebar,
-    .template2-main {
+    .template2-container {
         width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        box-sizing: border-box;
+        font-size: 14pt;
     }
 
-    .template2-sidebar {
-        width: 25% !important;
-        padding: 0.5cm !important;
+    .template2-container .template2-sidebar {
+        width: 25%;
     }
 
-    .template2-main {
-        width: 75% !important;
-        padding: 1cm !important;
+    .template2-container .template2-main,
+    .template2-container .template2-main * {
+        width: 85%;
     }
 
     .template2-container {
@@ -46,6 +29,10 @@
         box-shadow: none !important;
     }
 
+    .template2-sidebar {
+        background-color: #333;
+        color: white;
+    }
 }
 
 .create-resume-header {
@@ -159,9 +146,8 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
-    min-height: 80vh;
+    min-height: 70vh;
     width: 100%;
-    margin: 20px auto;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -186,17 +172,18 @@
     font-size: 1.5em;
     font-weight: bold;
     margin: 10px 0;
+    width: 100%;
 }
 
 .sidebar-info p {
     font-size: 0.9em;
     margin: 5px 0;
+    width: 100%;
 }
 
 .template2-main {
     padding: 30px;
-    min-width: 350px;
-    min-height: 80vh;
+    min-width: 100%;
 }
 
 .template2-main section {
@@ -234,6 +221,7 @@
 #template2 li {
     font-size: small;
 }
+
 #template2 .line {
     border: 0.5px solid #ffe2c1;
     margin-bottom: 14px;
@@ -259,7 +247,9 @@
     }
 
     .template2-sidebar {
-        width: 250px;
+        text-wrap: wrap;
+        max-width: 220px;
+        min-width: 220px;
     }
 }
 
@@ -268,6 +258,10 @@
     #editPreview,
     .resume-template {
         width: 80%;
+    }
+
+    .template2-main {
+        min-width: 350px;
     }
 }
 
@@ -279,17 +273,7 @@
     }
 }
 
-@media screen and (max-width: 1500px) {
-    .page {
-        width: 50%;
-    }
-}
 
-@media screen and (max-width: 1024px) {
-    .page {
-        width: 90%;
-    }
-}
 
 .scaler {
     transform: scale(1);

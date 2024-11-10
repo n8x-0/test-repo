@@ -1,6 +1,8 @@
-document.querySelector("#print").onclick = () => {
-    window.print();
-};
+document.querySelectorAll(".printBtn").forEach((btn) => {
+    btn.onclick = () => {
+        window.print();
+    };
+});
 const colorInp = document.querySelector("#colorInp");
 const bgColorInp = document.querySelector("#bgColorInp");
 const bulletBtn = document.querySelector(".bulletBtn");

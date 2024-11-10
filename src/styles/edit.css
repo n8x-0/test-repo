@@ -12,18 +12,6 @@
  }
 
  @media print {
-    @page {
-        size: A4;
-        margin: 0cm;
-    }
-
-    body {
-        width: 21cm;
-        height: 29.7cm;
-    }
-     body {
-         background: #fff
-     }
 
      .main,
      .main * {
@@ -248,8 +236,8 @@
      border: 1px solid #858585;
      overflow-y: scroll;
 
-     &::-webkit-scrollbar{
-        display: none;
+     &::-webkit-scrollbar {
+         display: none;
      }
  }
 
@@ -305,10 +293,40 @@
      color: white;
  }
 
+ @media screen and (max-width: 1500px) {
+     .page {
+         width: 60%;
+     }
+ }
+ @media screen and (max-width: 1400px) {
+    .toolkitLft {
+        position: relative;
+        top: 0;
+        width: 100%;
+        height: 200px;
+    }
+
+    .toolkitRgt {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        bottom: 0;
+    }
+}
+
+ @media screen and (max-width: 1024px) {
+     .page {
+         width: 80%;
+     }
+ }
 
  @media (max-width: 768px) {
      .page {
-         width: 90vw;
+         width: 95%;
          min-height: 80vh;
+     }
+
+     .helpPopup {
+         width: 94%;
      }
  }

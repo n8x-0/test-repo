@@ -50,8 +50,6 @@ input[type="number"] {
         width: 100% !important;
     }
 
-    .section-one,
-    .section-one *,
     #input-resume-data,
     #input-resume-data *,
     header,
@@ -305,6 +303,7 @@ section {
 #editResumeBtn {
     border: 2px solid var(--theme-cyan-bg);
     color: var(--theme-cyan-bg);
+    padding: 0.9rem 2rem;
 }
 
 #createResumeButton,
@@ -510,11 +509,11 @@ img {
 
 #print-content {
     width: 100%;
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 10px;
 }
 
 #editPrintBtnCont {
@@ -547,7 +546,7 @@ img {
     transform: translate(-50%, -50%);
     background-color: var(--widgets-bg);
     width: 80%;
-    padding: 1rem;
+    padding: 1.5rem;
     box-shadow: 0 10px 10px rgb(207, 220, 240);
     overflow-x: hidden;
     overflow-y: scroll;

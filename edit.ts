@@ -1,6 +1,8 @@
-(document.querySelector("#print") as HTMLButtonElement).onclick = () => {
-    window.print();
-};
+(document.querySelectorAll(".printBtn") as NodeListOf<HTMLButtonElement>).forEach((btn) => {
+    btn.onclick = () => {
+        window.print();
+    };
+})
 
 const colorInp = document.querySelector("#colorInp") as HTMLInputElement;
 const bgColorInp = document.querySelector("#bgColorInp") as HTMLInputElement;
@@ -41,7 +43,7 @@ function setupStyleDropdowns() {
 
     dropdowns.forEach(({ id, property }) => {
         const selectElement = document.getElementById(id) as HTMLSelectElement;
-        
+
         if (selectElement) {
             selectElement.addEventListener("change", () => {
                 styleElem(property, selectElement.value);

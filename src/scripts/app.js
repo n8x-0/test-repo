@@ -221,12 +221,12 @@ const shareableLink = (cvData, type) => {
     const encodedData = encodeURIComponent(btoa(serializedData));
     let link;
     if (type == "share") {
-        link = `https://resume-builder-2-hackathon.vercel.app/view-resume.html?data=${encodedData}`;
-        // link = `${window.origin}/resume/src/view-resume.html?data=${encodedData}`;
+        link = `https://resume-builder-underdev.vercel.app/view-resume.html?data=${encodedData}`;
+        // link = `${window.origin}/src/view-resume.html?data=${encodedData}`;
         return link;
     }
-    return link = `https://resume-builder-2-hackathon.vercel.app/edit.html?data=${encodedData}`;
-    // return link = `${window.origin}/resume/src/edit.html?data=${encodedData}`;
+    return link = `https://resume-builder-underdev.vercel.app/edit.html?data=${encodedData}`;
+    // return link = `${window.origin}/src/edit.html?data=${encodedData}`;
 };
 setTemplate();
 updateData();

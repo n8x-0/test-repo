@@ -274,11 +274,11 @@ const shareableLink = (cvData: CVdata, type: string): string => {
     let link: string
     if (type == "share") {
         link = `https://resume-builder-underdev.vercel.app/view-resume.html?data=${encodedData}`;
-        // link = `${window.origin}/resume/src/view-resume.html?data=${encodedData}`;
+        // link = `${window.origin}/src/view-resume.html?data=${encodedData}`;
         return link;
     }
     return link = `https://resume-builder-underdev.vercel.app/edit.html?data=${encodedData}`;
-    // return link = `${window.origin}/resume/src/edit.html?data=${encodedData}`;
+    // return link = `${window.origin}/src/edit.html?data=${encodedData}`;
 }
 
 setTemplate()
