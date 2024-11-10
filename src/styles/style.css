@@ -545,7 +545,7 @@ img {
     border-radius: 50px;
     transform: translate(-50%, -50%);
     background-color: var(--widgets-bg);
-    width: 80%;
+    width: 92%;
     padding: 1.5rem;
     box-shadow: 0 10px 10px rgb(207, 220, 240);
     overflow-x: hidden;
