@@ -243,10 +243,8 @@ const renderResumeData = (data: CVdata): void => {
 
 const updateData = (): void => {
     if (storedResList.length === 0) {
-        select("#editNprintBtn-boxToHide").style.display = 'none';
         renderResumeData(defaultResume)
     } else {
-        select("#editNprintBtn-boxToHide").style.display = 'flex';
         renderResumeData(storedResList[storedResList.length - 1]);
         updateResumeList(storedResList, ".created-resume-list")
     }
@@ -255,7 +253,6 @@ const updateData = (): void => {
 const resetFormFields = (form: HTMLFormElement): void => {
     const { username, contact, email, objective, summary } = form;
     select(".resume-actionBar-toggle-forMobile").classList.add("notification");
-    select("#editNprintBtn-boxToHide").style.display = 'flex';
     [username, contact, email, objective, summary].forEach((field: any) => field.value = '');
     skillCaps.innerHTML = ""
     expCaps.innerHTML = ""
@@ -269,8 +266,10 @@ const resetFormFields = (form: HTMLFormElement): void => {
 
 
 const shareableLink = (cvData: CVdata, type: string): string => {
+    cvData.image = ''
     const serializedData = JSON.stringify({cvData , templateType});
     const encodedData = encodeURIComponent(btoa(serializedData));
+    cvData.image = img_src;
     let link: string
     if (type == "share") {
         link = `https://resume-builder-underdev.vercel.app/view-resume.html?data=${encodedData}`;
@@ -288,8 +287,17 @@ updateData()
 
 const createNewResumeBtn = select('#createNewResumeBtn');
 const editResumeBtn = select('#editResumeBtn');
+const simpleEdit = select("#simpleEdit");
 const printResumeBtn = select('#printResumeBtn');
 
+simpleEdit.onclick = () => {
+    select("#editPreview").setAttribute("contenteditable", "true")
+    alert("now click the resume to edit")
+}
+
+if(window.innerWidth < 768){
+    editResumeBtn.style.display = 'none'
+}
 editResumeBtn.onclick = () => {
     if (cvData === undefined) {
         cvData = storedResList[storedResList.length - 1]

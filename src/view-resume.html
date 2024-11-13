@@ -9,11 +9,13 @@
     <link rel="icon" href="images/n8xLogo.png" type="image/x-icon">
     <style>
         @media print {
+
             footer,
-            footer *{
+            footer * {
                 display: none !important;
             }
         }
+
         footer {
             width: 100%;
             padding: 20px;
@@ -40,6 +42,7 @@
         a:hover {
             background-color: #0056b3;
         }
+
         footer div {
             width: 100%;
             display: flex;
@@ -128,7 +131,7 @@
             if (encodedData) {
                 try {
                     const decodedData = JSON.parse(atob(decodeURIComponent(encodedData)));
-                    const {username, contact, email, objective, skills, experience, education, summary} = decodedData.cvData
+                    const { username, contact, email, objective, skills, experience, education, summary } = decodedData.cvData
 
                     document.getElementById('print-username').innerHTML = username;
                     document.getElementById('print-contact').innerHTML = contact;

@@ -300,7 +300,8 @@ section {
 
 
 #createNewResumeBtn,
-#editResumeBtn {
+#editResumeBtn,
+#simpleEdit {
     border: 2px solid var(--theme-cyan-bg);
     color: var(--theme-cyan-bg);
     padding: 0.9rem 2rem;
@@ -315,14 +316,14 @@ section {
 
 #createNewResumeBtn,
 #printResumeBtn,
-#editResumeBtn {
+#editResumeBtn,
+#simpleEdit {
     border-radius: 2000px;
     text-decoration: none;
     margin: 3px;
     cursor: pointer;
 }
-
-#editResumeBtn {
+#simpleEdit {
     border-top-left-radius: 9999px;
     border-bottom-left-radius: 9999px;
 }
@@ -527,7 +528,7 @@ img {
     display: flex;
 }
 
-#editResumeBtn {
+#simpleEdit {
     width: 50%;
     text-align: center;
 }
@@ -639,14 +640,24 @@ fieldset {
     justify-content: center;
     align-items: center;
     position: fixed;
-    bottom: 30px;
-    right: 22px;
-    width: 45px;
-    height: 45px;
+    bottom: 40px;
+    right: 25px;
+    width: 48px;
+    height: 48px;
     background: var(--theme-cyan-bg);
     border-radius: 100%;
     z-index: 5;
     box-shadow: 2px 6px 4px #0d4a7c;
+    animation: up-down 1.6s linear infinite;
+}
+@keyframes up-down {
+    0%{
+        transform: translateY(0%)
+    }50%{
+        transform: translateY(5%)
+    }100%{
+        transform: translateY(0%)
+    }
 }
 
 .notification::after {
@@ -872,13 +883,14 @@ footer {
         font-size: 1.5rem;
     }
 
-    #editResumeBtn {
+    #simpleEdit {
         padding: 0.75rem 2rem;
         margin: 4px;
     }
 
     #createResumeButton,
     #printResumeBtn,
+    #editResumeBtn,
     #createNewResumeBtn {
         padding: 0.9rem 2rem;
         margin: 4px;
